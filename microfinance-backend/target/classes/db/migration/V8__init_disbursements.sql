@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS disbursements (
+    id BIGSERIAL PRIMARY KEY,
+    disbursement_id VARCHAR(30) NOT NULL UNIQUE,
+    loan_id BIGINT NOT NULL,
+    borrower_id BIGINT NOT NULL,
+    amount NUMERIC(12, 2) NOT NULL,
+    processing_fee_deducted NUMERIC(12, 2),
+    insurance_premium_deducted NUMERIC(12, 2),
+    net_disbursed_amount NUMERIC(12, 2) NOT NULL,
+    payment_mode VARCHAR(20) NOT NULL,
+    bank_account_number VARCHAR(20),
+    ifsc_code VARCHAR(11),
+    utr_number VARCHAR(50),
+    disbursement_date DATE NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    failure_reason VARCHAR(255),
+    penny_drop_verified BOOLEAN DEFAULT FALSE,
+    approved_by VARCHAR(100),
+    branch_id BIGINT,
+    created_at TIMESTAMP
+);

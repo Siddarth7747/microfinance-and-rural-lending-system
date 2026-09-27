@@ -1,0 +1,5 @@
+package com.mfi.microfinance.exception;
+
+public class BureauApiTimeoutException extends RuntimeException {
+    public BureauApiTimeoutException(String message) { super(message); }
+}

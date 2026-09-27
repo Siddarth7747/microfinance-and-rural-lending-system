@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Cinzel:wght@600;700;800;900&display=swap');
+
+:root {
+  --bg-black: #000000;
+  --bg-dark: #040406;
+  --bg-surface: #08080c;
+  --bg-surface-elevated: #0f0f14;
+  --bg-card: rgba(8, 8, 12, 0.92);
+  --bg-card-border: rgba(234, 179, 8, 0.3);
+  --bg-card-hover-border: #facc15;
+
+  --gold-100: #fef9c3;
+  --gold-200: #fef08a;
+  --gold-300: #fde047;
+  --gold-400: #facc15;
+  --gold-500: #eab308;
+  --gold-600: #ca8a04;
+  --gold-700: #a16207;
+  --gold-800: #854d0e;
+
+  --primary: #facc15;
+  --primary-light: #fef08a;
+  --primary-dark: #ca8a04;
+  --primary-glow: rgba(250, 204, 21, 0.45);
+
+  --text-main: #fef08a;
+  --text-gold: #facc15;
+  --text-secondary: #fde047;
+  --text-muted: #ca8a04;
+  --text-dim: #a16207;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #fef08a;
+}
+
+/* Keyframe Animations for Luxury Atmosphere */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.15), inset 0 1px 0 rgba(254, 240, 138, 0.2);
+    border-color: rgba(234, 179, 8, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(250, 204, 21, 0.35), inset 0 1px 0 rgba(254, 240, 138, 0.4);
+    border-color: rgba(250, 204, 21, 0.65);
+  }
+}
+
+@keyframes lightSweep {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  50%, 100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes goldCelebrationPop {
+  0% { transform: scale(0.6) translateY(40px); opacity: 0; }
+  60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes sealRotatePulse {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  70% { transform: scale(1.15) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes rayRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #000000 !important;
+  color: #fef08a !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(234, 179, 8, 0.18) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(202, 138, 4, 0.15) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(250, 204, 21, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(161, 98, 7, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fde047 !important;
+  text-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+}
+
+p, span, div, strong, b, i, em {
+  color: #fef08a;
+}
+
+/* Metallic Gold Typography Gradients */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 25%, #facc15 60%, #ca8a04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #facc15;
+}
+
+/* Ultra-Luxury Obsidian Gold Cards with Sweep Reflection */
+.glass-card {
+  background: rgba(8, 8, 12, 0.92) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(234, 179, 8, 0.3) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 16px 44px -4px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(234, 179, 8, 0.15),
+    inset 0 1px 0 rgba(254, 240, 138, 0.25);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  color: #fef08a !important;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(254, 240, 138, 0.8) 50%, transparent 100%);
+}
+
+.glass-card:hover {
+  border-color: #facc15 !important;
+  box-shadow: 
+    0 24px 64px -6px rgba(0, 0, 0, 1),
+    0 0 35px 0 rgba(234, 179, 8, 0.4),
+    inset 0 1px 0 rgba(254, 240, 138, 0.45);
+  transform: translateY(-4px) scale(1.008);
+}
+
+/* Radiant Gold Action Buttons with Shimmer */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #fef08a 0%, #facc15 45%, #ca8a04 100%) !important;
+  color: #000000 !important;
+  border: 1px solid #fef08a !important;
+  padding: 11px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 24px 0 rgba(234, 179, 8, 0.65), inset 0 1px 0 #ffffff;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+  animation: lightSweep 4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.btn-primary * {
+  color: #000000 !important;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffffff 0%, #fde047 50%, #eab308 100%) !important;
+  box-shadow: 0 8px 38px 0 rgba(250, 204, 21, 0.85), inset 0 1px 0 #ffffff;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(15, 15, 20, 0.9) !important;
+  color: #facc15 !important;
+  border: 1px solid rgba(234, 179, 8, 0.45) !important;
+  padding: 11px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-secondary * {
+  color: #facc15 !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(234, 179, 8, 0.2) !important;
+  color: #ffffff !important;
+  border-color: #facc15 !important;
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Black & Gold Inset Inputs */
+.form-input {
+  width: 100%;
+  background: #070709 !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+  color: #fef08a !important;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.form-input::placeholder {
+  color: #854d0e !important;
+}
+
+.form-input:focus {
+  border-color: #facc15 !important;
+  background: #0f0f13 !important;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.35), 0 0 28px rgba(234, 179, 8, 0.35);
+}
+
+label {
+  color: #facc15 !important;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Gold Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.badge-gold, .badge-indigo, .badge-emerald, .badge-amber {
+  background: rgba(234, 179, 8, 0.18) !important;
+  color: #facc15 !important;
+  border: 1px solid rgba(234, 179, 8, 0.5) !important;
+  box-shadow: 0 0 16px rgba(234, 179, 8, 0.25);
+}
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.18) !important;
+  color: #fecdd3 !important;
+  border: 1px solid rgba(244, 63, 94, 0.5) !important;
+}
+
+/* Premium Tables */
+table {
+  background: #050507 !important;
+  color: #fef08a !important;
+}
+
+th {
+  background: #0b0b0f !important;
+  color: #facc15 !important;
+  border-bottom: 1px solid rgba(234, 179, 8, 0.4) !important;
+  text-shadow: 0 0 8px rgba(234, 179, 8, 0.3);
+}
+
+td {
+  color: #fef08a !important;
+  border-bottom: 1px solid rgba(234, 179, 8, 0.12) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 179, 8, 0.35);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #facc15;
+}

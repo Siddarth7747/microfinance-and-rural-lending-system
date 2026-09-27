@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Application Development — Microfinance & Rural Lending Management System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 20mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      color: #fef08a;
+      background: #000000;
+      line-height: 1.5;
+      padding: 30px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .title-page {
+      text-align: center;
+      padding: 120px 20px;
+      page-break-after: always;
+      background: #000000;
+    }
+
+    .title-page h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      color: #fde047;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      text-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    }
+
+    .title-page h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fef08a;
+      line-height: 1.4;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: #facc15;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid rgba(234, 179, 8, 0.4);
+      padding-bottom: 6px;
+      text-shadow: 0 0 12px rgba(234, 179, 8, 0.3);
+    }
+
+    .sub-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fde047;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .code-window {
+      background: #060608;
+      border: 1px solid rgba(234, 179, 8, 0.35);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8), 0 0 16px rgba(234, 179, 8, 0.15);
+      page-break-inside: avoid;
+    }
+
+    .window-header {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-gold { background: #facc15; box-shadow: 0 0 6px #facc15; }
+    .dot-amber { background: #ca8a04; }
+    .dot-dark { background: #854d0e; }
+
+    pre {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #fef08a;
+      overflow-x: auto;
+      line-height: 1.45;
+    }
+
+    .keyword { color: #facc15; font-weight: bold; }
+    .type { color: #fde047; }
+    .string { color: #fef08a; }
+    .comment { color: #a16207; font-style: italic; }
+    .func { color: #ffd700; font-weight: bold; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 12px;
+      background: #060608;
+      border: 1px solid rgba(234, 179, 8, 0.35);
+    }
+
+    th, td {
+      border: 1px solid rgba(234, 179, 8, 0.25);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #0d0d10;
+      color: #facc15;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      color: #fef08a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="title-page">
+    <h1>APPLICATION DEVELOPMENT</h1>
+    <h2>Design and Implementation of a Microfinance and Rural Lending Management System using Spring Boot and React</h2>
+  </div>
+
+  <!-- Folder Structure -->
+  <div class="section-title">FOLDER STRUCTURE</div>
+  <div class="code-window">
+    <div class="window-header">
+      <div class="dot dot-gold"></div>
+      <div class="dot dot-amber"></div>
+      <div class="dot dot-dark"></div>
+    </div>
+    <pre>
+MICRO FINANACE RURAL LENDING MANAGEMENT/
+├── microfinance-backend/
+│   ├── pom.xml
+│   ├── src/main/java/com/mfi/microfinance/
+│   │   ├── config/ (SecurityConfig, JwtConfig, CorsConfig)
+│   │   ├── controller/ (BorrowerController, LoanController, RepaymentController, CollectionController)
+│   │   ├── entity/ (Borrower, Loan, LoanGroup, EmiSchedule, RepaymentTransaction)
+│   │   ├── service/ (BorrowerService, LoanService, DelinquencyService, RepaymentService)
+│   │   └── repository/ (BorrowerRepository, LoanRepository, LoanGroupRepository)
+│   └── src/main/resources/application.properties
+│
+└── microfinance-frontend/
+    ├── package.json
+    ├── vite.config.js
+    └── src/
+        ├── api/ (client.js, borrowerApi.js, loanApi.js, collectionApi.js)
+        ├── components/ (BorrowerRegistrationForm, BorrowerList, JlgGroupForm, DataTable)
+        ├── charts/ (AumGrowthChart, CollectionEfficiencyChart)
+        ├── layouts/ (MainLayout, Sidebar, NavBar)
+        └── pages/ (Home.jsx, Login.jsx, Microfinance.jsx)
+    </pre>
+  </div>
+
+  <!-- Frontend Documentation -->
+  <div class="section-title">FRONTEND DOCUMENTATION (REACTJS) COMPONENTS</div>
+
+  <div class="sub-title">/Common/DataTable.jsx</div>
+  <div class="code-window">
+    <div class="window-header"><div class="dot dot-gold"></div><div class="dot dot-amber"></div><div class="dot dot-dark"></div></div>
+    <pre>
+<span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> { Inbox } <span class="keyword">from</span> <span class="string">'lucide-react'</span>;
+
+<span class="keyword">export const</span> <span class="func">DataTable</span> = ({ columns, data, onRowClick }) => {
+  <span class="keyword">return</span> (
+    &lt;<span class="type">div</span> style={{ overflowX: <span class="string">'auto'</span>, borderRadius: <span class="string">'12px'</span>, border: <span class="string">'1px solid rgba(234, 179, 8, 0.35)'</span>, background: <span class="string">'#060608'</span> }}&gt;
+      &lt;<span class="type">table</span> style={{ width: <span class="string">'100%'</span>, borderCollapse: <span class="string">'collapse'</span>, fontSize: <span class="string">'13.5px'</span> }}&gt;
+        &lt;<span class="type">thead</span>&gt;
+          &lt;<span class="type">tr</span> style={{ background: <span class="string">'#0d0d10'</span>, borderBottom: <span class="string">'1px solid rgba(234, 179, 8, 0.35)'</span> }}&gt;
+            {columns.map((col, idx) => (
+              &lt;<span class="type">th</span> key={idx} style={{ padding: <span class="string">'12px 18px'</span>, color: <span class="string">'#facc15'</span>, fontSize: <span class="string">'12px'</span> }}&gt;{col.header}&lt;/<span class="type">th</span>&gt;
+            ))}
+          &lt;/<span class="type">tr</span>&gt;
+        &lt;/<span class="type">thead</span>&gt;
+        &lt;<span class="type">tbody</span>&gt;
+          {data && data.length > 0 ? (
+            data.map((row, rIdx) => (
+              &lt;<span class="type">tr</span> key={rIdx} onClick={() => onRowClick && onRowClick(row)}&gt;
+                {columns.map((col, cIdx) => (
+                  &lt;<span class="type">td</span> key={cIdx} style={{ padding: <span class="string">'14px 18px'</span>, color: <span class="string">'#fef08a'</span> }}&gt;
+                    {col.render ? col.render(row) : row[col.accessor]}
+                  &lt;/<span class="type">td</span>&gt;
+                ))}
+              &lt;/<span class="type">tr</span>&gt;
+            ))
+          ) : (
+            &lt;<span class="type">tr</span>&gt;&lt;<span class="type">td</span> colSpan={columns.length} style={{ padding: <span class="string">'48px'</span>, textAlign: <span class="string">'center'</span>, color: <span class="string">'#ca8a04'</span> }}&gt;No records found&lt;/<span class="type">td</span>&gt;&lt;/<span class="type">tr</span>&gt;
+          )}
+        &lt;/<span class="type">tbody</span>&gt;
+      &lt;/<span class="type">table</span>&gt;
+    &lt;/<span class="type">div</span>&gt;
+  );
+};
+    </pre>
+  </div>
+
+  <div class="sub-title">/Borrower/BorrowerRegistrationForm.jsx</div>
+  <div class="code-window">
+    <div class="window-header"><div class="dot dot-gold"></div><div class="dot dot-amber"></div><div class="dot dot-dark"></div></div>
+    <pre>
+<span class="keyword">import</span> React, { useState } <span class="keyword">from</span> <span class="string">'react'</span>;
+<span class="keyword">import</span> { borrowerApi } <span class="keyword">from</span> <span class="string">'../../api/borrowerApi'</span>;
+
+<span class="keyword">export const</span> <span class="func">BorrowerRegistrationForm</span> = ({ onSuccess }) => {
+  <span class="keyword">const</span> [formData, setFormData] = useState({
+    firstName: <span class="string">'Sunita'</span>, lastName: <span class="string">'Devi'</span>, mobileNumber: <span class="string">'9876543210'</span>,
+    aadhaarNumber: <span class="string">'987654321012'</span>, village: <span class="string">'Shivpur'</span>, annualHouseholdIncome: <span class="string">'180000'</span>
+  });
+
+  <span class="keyword">const</span> handleSubmit = <span class="keyword">async</span> (e) => {
+    e.preventDefault();
+    <span class="keyword">await</span> borrowerApi.register(formData);
+    alert(<span class="string">'Borrower registered successfully!'</span>);
+    <span class="keyword">if</span> (onSuccess) onSuccess();
+  };
+
+  <span class="keyword">return</span> (
+    &lt;<span class="type">form</span> onSubmit={handleSubmit}&gt;
+      &lt;<span class="type">input</span> className=<span class="string">"form-input"</span> value={formData.firstName} onChange={e => setFormData({...formData, firstName: e.target.value})} /&gt;
+      &lt;<span class="type">input</span> className=<span class="string">"form-input"</span> value={formData.mobileNumber} onChange={e => setFormData({...formData, mobileNumber: e.target.value})} maxLength={10} /&gt;
+      &lt;<span class="type">button</span> type=<span class="string">"submit"</span> className=<span class="string">"btn-primary"</span>&gt;Register Borrower&lt;/<span class="type">button</span>&gt;
+    &lt;/<span class="type">form</span>&gt;
+  );
+};
+    </pre>
+  </div>
+
+  <!-- Integration Documentation -->
+  <div class="section-title">INTEGRATION DOCUMENTATION (Spring Boot + React + MySQL)</div>
+  <div class="sub-title">api.js (Axios Client Configuration)</div>
+  <div class="code-window">
+    <div class="window-header"><div class="dot dot-gold"></div><div class="dot dot-amber"></div><div class="dot dot-dark"></div></div>
+    <pre>
+<span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;
+
+<span class="keyword">const</span> api = axios.create({
+  baseURL: <span class="string">'/api'</span>,
+  headers: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> }
+});
+
+api.interceptors.request.use((config) => {
+  <span class="keyword">const</span> token = localStorage.getItem(<span class="string">'token'</span>);
+  <span class="keyword">if</span> (token) {
+    config.headers.Authorization = <span class="string">`Bearer ${token}`</span>;
+  }
+  <span class="keyword">return</span> config;
+});
+
+<span class="keyword">export default</span> api;
+    </pre>
+  </div>
+
+  <!-- Terminal Output -->
+  <div class="section-title">TERMINAL OUTPUT</div>
+  <div class="sub-title">FRONTEND (Vite Server)</div>
+  <div class="code-window">
+    <div class="window-header"><div class="dot dot-gold"></div><div class="dot dot-amber"></div><div class="dot dot-dark"></div></div>
+    <pre>
+VITE v5.4.21 ready in 482 ms
+
+➜ Local: http://localhost:5173/
+➜ Network: use --host to expose
+➜ press h + enter to show help
+    </pre>
+  </div>
+
+  <div class="sub-title">BACKEND (Spring Boot 3.2.5 Server)</div>
+  <div class="code-window">
+    <div class="window-header"><div class="dot dot-gold"></div><div class="dot dot-amber"></div><div class="dot dot-dark"></div></div>
+    <pre>
+2026-09-06T12:30:40.402+05:30 INFO [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-09-06T12:30:40.574+05:30 INFO [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-09-06T12:30:42.572+05:30 INFO [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-06T12:30:45.262+05:30 INFO [main] c.m.m.MicrofinanceApplication : Started MicrofinanceApplication in 7.923 seconds
+    </pre>
+  </div>
+
+  <!-- Database Output -->
+  <div class="section-title">MYSQL DATABASE USERS OUTPUT</div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>full_name</th>
+        <th>designation</th>
+        <th>is_active</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>super_admin</td><td>System Administrator</td><td>ADMIN</td><td>1</td></tr>
+      <tr><td>2</td><td>admin</td><td>System Administrator</td><td>ADMIN</td><td>1</td></tr>
+      <tr><td>3</td><td>field_officer</td><td>Rajesh Kumar (Field Officer)</td><td>FIELD_OFFICER</td><td>1</td></tr>
+      <tr><td>4</td><td>manager</td><td>Ananya Sharma (Branch Manager)</td><td>BRANCH_MANAGER</td><td>1</td></tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

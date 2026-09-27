@@ -1,0 +1,1 @@
+URGENT: Dear {borrowerName}, your EMI of Rs. {emiAmount} for Loan A/c {loanAccountNumber} is overdue by {dpdDays} days. Please pay immediately to avoid penalties and credit score impact. Contact your loan officer {officerName} at {officerMobile}. - MFI Services

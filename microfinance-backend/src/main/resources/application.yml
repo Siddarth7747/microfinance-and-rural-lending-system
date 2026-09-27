@@ -1,0 +1,7 @@
+# Primary configuration is in application.properties
+# This file is kept for YAML-based profile overrides only
+spring:
+  profiles:
+    active: dev
+
+

@@ -1,0 +1,1 @@
+Dear {borrowerName}, your OTP for Microfinance login is {otp}. Valid for 5 minutes. Do not share with anyone. - MFI Services

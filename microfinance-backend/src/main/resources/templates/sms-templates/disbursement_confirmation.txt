@@ -1,0 +1,1 @@
+Dear {borrowerName}, Rs. {amount} has been disbursed to your bank account {bankAccount} for Loan A/c {loanAccountNumber}. Your first EMI of Rs. {emiAmount} is due on {firstEmiDate}. - MFI Services

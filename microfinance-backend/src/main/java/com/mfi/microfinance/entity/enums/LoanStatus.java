@@ -1,0 +1,21 @@
+package com.mfi.microfinance.entity.enums;
+
+public enum LoanStatus {
+    DRAFT,
+    PENDING_REVIEW,
+    FIELD_OFFICER_RECOMMENDED,
+    BRANCH_MANAGER_APPROVED,
+    CREDIT_COMMITTEE_APPROVED,
+    SANCTIONED,
+    DISBURSEMENT_INITIATED,
+    DISBURSED,
+    ACTIVE,
+    OVERDUE,
+    NPA,
+    RESTRUCTURED,
+    WRITTEN_OFF,
+    FORECLOSED,
+    CLOSED,
+    REJECTED,
+    CANCELLED
+}

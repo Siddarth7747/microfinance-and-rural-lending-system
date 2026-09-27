@@ -1,0 +1,18 @@
+{
+  "welcome": "Welcome to Microfinance Rural Lending Management",
+  "dashboard": "Dashboard",
+  "borrowers": "Borrowers",
+  "loanGroups": "JLG / SHG Groups",
+  "loanApplications": "Loan Applications",
+  "loans": "Active Loans",
+  "collections": "Field Collections",
+  "delinquency": "Delinquency & PAR",
+  "shg": "SHG Management",
+  "insurance": "Insurance & Claims",
+  "disbursement": "Disbursement",
+  "reports": "MIS & Regulatory Reports",
+  "admin": "Admin Console",
+  "login": "Login",
+  "logout": "Logout",
+  "offlineMode": "Offline Mode — Operations buffered locally"
+}

@@ -1,0 +1,4 @@
+com\mfi\microfinance\integration\AadhaarEkycIntegrationTest.class
+com\mfi\microfinance\service\DelinquencyServiceTest.class
+com\mfi\microfinance\service\InterestCalculationServiceTest.class
+com\mfi\microfinance\integration\CibilBureauIntegrationTest.class
